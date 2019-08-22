@@ -3,7 +3,7 @@
   <div class="elemento limpiarEstilos" *ngFor="let ingreso of ingresos">
     <div class="elemento_descripcion" >{{ingreso.descripcion}}</div>
     <div class="right limpiarEstilos">
-      <div class="elemento_valor">+ {{ingreso.valor}}</div>
+      <div class="elemento_valor">+ {{ingreso.valor | currency: 'BSF' : 'VES': '1.2-2'}}</div>
       <div class="elemento_eliminar">
         <button class="elemento_eliminar--btn" (click)="eliminarIngreso(ingreso)">
           <i class="ion-ios-close-outline"></i>
