@@ -15,7 +15,7 @@ export class AppComponent {
     egresos: Egreso[] = [];
 
     constructor(private ingresoServicio: IngresoServicio, private egresoServicio: EgresoServicio) {
-        this.egresos = egresoServicio.egreso;
+        this.egresos = egresoServicio.egresos;
         this.ingresos = ingresoServicio.ingresos;
     }
 
