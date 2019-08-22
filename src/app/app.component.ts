@@ -16,7 +16,7 @@ export class AppComponent {
 
     constructor(private ingresoServicio: IngresoServicio, private egresoServicio: EgresoServicio) {
         this.egresos = egresoServicio.egreso;
-        this.ingresos = ingresoServicio.ingreso;
+        this.ingresos = ingresoServicio.ingresos;
     }
 
     getIngresoTotal() {
@@ -28,7 +28,7 @@ export class AppComponent {
     }
 
     getEgresoTotal() {
-        let egresoTotal: number =0;
+        let egresoTotal: number = 0;
         this.egresos.forEach(egreso => {
             egresoTotal += egreso.valor;
         });

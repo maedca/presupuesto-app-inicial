@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Ingreso} from './ingreso.model';
+import {IngresoServicio} from './ingreso.servicio';
 
 @Component({
-  selector: 'app-ingreso',
-  templateUrl: './ingreso.component.html',
-  styleUrls: ['./ingreso.component.css']
+    selector: 'app-ingreso',
+    templateUrl: './ingreso.component.html',
+    styleUrls: ['./ingreso.component.css']
 })
 export class IngresoComponent implements OnInit {
+    ingresos: Ingreso[] = [];
 
-  constructor() { }
+    constructor(private IngresoServicio: IngresoServicio) {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.ingresos = this.IngresoServicio.ingresos;
+        console.log(this.ingresos);
+    }
 
+    eliminarIngreso(ingreso: Ingreso) {
+        this.IngresoServicio.eliminar(ingreso);
+    }
 }
